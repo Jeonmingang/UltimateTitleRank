@@ -1,0 +1,63 @@
+
+# ===== UltimateTitleRank Configuration =====
+# 저장 파일: plugins/UltimateTitleRank/data/players.yml, titles.yml
+
+chat:
+  format_enabled: true
+  # 채팅 형식: [칭호] 닉네임: 메시지
+  # OP(관리자)는 닉네임을 항상 &c로 표시
+  op_name_color: "&c"
+  enable_op_color: true
+  inject_mode: "prepend"  # prepend | replace_name
+  prefix_template: "&7[ &f%title% &7] "
+
+title_book:
+  name: "&d칭호북: &f%title%"
+  lore:
+    - "&7이 책을 우클릭하면"
+    - "&f해당 칭호를 획득합니다."
+    - "&7칭호: &f%title%"
+  material: "ENCHANTED_BOOK"
+  glow: true
+
+gui:
+  title: "&8보유한 칭호 선택"
+  rows: 3
+  filler: "BLACK_STAINED_GLASS_PANE"
+
+ranks:
+  # 현재 그룹(current)의 플레이 시간이 time_seconds 이상이면 next 그룹으로 승급
+  # groups are LuckPerms groups
+  chain:
+    - current: "default"
+      next: "member"
+      time_seconds: 3600
+    - current: "member"
+      next: "vip"
+      time_seconds: 7200
+    - current: "vip"
+      next: "mvp"
+      time_seconds: 28800
+
+rankup:
+  check_interval_seconds: 60
+  broadcast_message: "&6%player%&e 님이 &b%next% &e등급으로 자동 승급되었습니다! 축하합니다!"
+
+storage:
+  save_interval_seconds: 120
+
+
+custom_title_voucher:
+  name: "&b칭호권 &7(우클릭 후 채팅으로 입력)"
+  lore:
+    - "&7우클릭하면 다음 채팅에 입력한 내용이"
+    - "&f커스텀 칭호로 등록됩니다."
+    - "&7색코드 & 사용 가능 (&c,&6 등)."
+  material: "NAME_TAG"
+  glow: true
+  input_timeout_seconds: 30
+  prompt_on_use: "&e이제 채팅에 원하는 칭호를 입력하세요. (& 색코드 가능) &7(%sec%s 내 미입력시 취소)"
+  success_message: "&a커스텀 칭호 등록 완료: &f%title%"
+  timeout_message: "&c시간 초과로 취소되었습니다."
+  cancel_keyword: "취소"
+  cancel_message: "&7입력을 취소했습니다."
