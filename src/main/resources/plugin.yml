@@ -1,0 +1,15 @@
+name: UltimateTitleRank
+main: com.minkang.ultimate.titles.Main
+version: 1.1.6
+api-version: 1.16
+softdepend: [LuckPerms]
+
+commands:
+  승급:
+    description: 다음 칭호까지 필요한 플레이타임 및 다음 등급 보기
+    usage: /승급
+  칭호:
+    description: 칭호 도움말/GUI/생성/삭제/아이템
+    usage: /칭호 [열기|생성 <이름> <슬롯>|삭제 <슬롯>|삭제 <플레이어> <슬롯>|아이템]
+
+permissions: {}
