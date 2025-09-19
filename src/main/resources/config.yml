@@ -1,0 +1,53 @@
+ranks:
+  - id: newbie
+    display: "&7[&f새싹&7]"
+    required_minutes: 0
+    luckperms_group: "rank_newbie"
+    suffix: "&7[새싹]"
+    view_limits:
+      legendary_per_day: 1
+      megaboss_per_day: 1
+  - id: regular
+    display: "&a[&2레귤러&a]"
+    required_minutes: 180
+    luckperms_group: "rank_regular"
+    suffix: "&a[레귤러]"
+    view_limits:
+      legendary_per_day: 3
+      megaboss_per_day: 3
+  - id: veteran
+    display: "&b[&3베테랑&b]"
+    required_minutes: 600
+    luckperms_group: "rank_veteran"
+    suffix: "&b[베테랑]"
+    view_limits:
+      legendary_per_day: 6
+      megaboss_per_day: 6
+  - id: master
+    display: "&6[&e마스터&6]"
+    required_minutes: 1800
+    luckperms_group: "rank_master"
+    suffix: "&6[마스터]"
+    view_limits:
+      legendary_per_day: 12
+      megaboss_per_day: 12
+
+intercept_commands:
+  legendary_aliases: ["/전설시간"]
+  megaboss_aliases: ["/메가보스", "/메가보스시간"]
+  dispatch_on_legendary: "checkspawns legendary"
+  dispatch_on_megaboss: "checkspawns megaboss"
+
+gui:
+  title: "&8칭호 선택"
+  size: 54
+
+custom_title_item:
+  name: "&d칭호 커스텀권"
+  lore_lines:
+    - "&7우클릭 후 채팅에 원하는 칭호를 입력하세요."
+    - "&7색코드 & 및 &x&?&?&?&?&?&? 16진 RGB 지원"
+
+storage:
+  type: "yaml"
+  timezone: "Asia/Seoul"
