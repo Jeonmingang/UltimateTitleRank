@@ -1,0 +1,25 @@
+name: UltimateTitleRank
+main: com.minkang.ultimate.titles.Main
+version: 1.0.7
+api-version: 1.16
+softdepend: [LuckPerms]
+commands:
+  승급:
+    description: 다음 칭호까지 필요한 플레이타임 및 다음 등급 보기
+    usage: /승급
+  칭호:
+    description: 칭호 GUI 오픈
+    usage: /칭호
+  칭호생성:
+    description: (오피) 칭호 생성 <이름> <슬롯>
+    usage: /칭호생성 <이름> <슬롯>
+  칭호삭제:
+    description: (오피) 특정 플레이어의 해당 슬롯 칭호 제거
+    usage: /칭호삭제 <플레이어> <슬롯>
+  칭호목록:
+    description: (오피) 생성된 슬롯/이름 목록
+    usage: /칭호목록
+  칭호아이템:
+    description: (오피) 들고있는 아이템을 '칭호 커스텀권'으로 설정
+    usage: /칭호아이템
+permissions: {}
