@@ -1,0 +1,8 @@
+package com.minkang.ultimate.titles;
+import org.bukkit.*; import org.bukkit.entity.Player; import org.bukkit.event.*; import org.bukkit.event.player.*; import org.bukkit.inventory.*; import org.bukkit.inventory.meta.*; import org.bukkit.persistence.*;
+public class ColorTokenListener implements Listener { private final Main plugin; private final ColorChatService service; private final NamespacedKey key;
+public ColorTokenListener(Main plugin, ColorChatService s){ this.plugin=plugin; this.service=s; this.key=new NamespacedKey(plugin, "colorchat"); }
+@EventHandler public void onUse(PlayerInteractEvent e){ if(e.getHand()!=EquipmentSlot.HAND) return; ItemStack it=e.getItem(); if(it==null || it.getType()==Material.AIR || !it.hasItemMeta()) return; ItemMeta im=it.getItemMeta(); if(!im.getPersistentDataContainer().has(key, PersistentDataType.STRING)) return; String id=im.getPersistentDataContainer().get(key, PersistentDataType.STRING); ColorDef def=service.get(id); if(def==null) return; e.setCancelled(true); Player p=e.getPlayer(); if(plugin.storage().get(p.getUniqueId()).getColorsOwned().contains(def.id.toLowerCase())){ p.sendMessage(Chat.color(plugin.msg("prefix")+plugin.msg("colorchat.already_owned"))); return; } service.grant(p.getUniqueId(), def.id);
+        service.setActive(p.getUniqueId(), def.id); p.sendMessage(Chat.color(plugin.msg("prefix")+plugin.msg("colorchat.learned").replace("{color_name}", Chat.color(def.code+def.name)))); it.setAmount(max(0, it.getAmount()-1)); p.getInventory().setItemInMainHand(it.getAmount()>0?it:null); }
+private int max(int a,int b){ return a>b?a:b; }
+}
