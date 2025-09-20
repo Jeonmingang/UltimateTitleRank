@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.minkang.ultimate</groupId>
   <artifactId>UltimateTitleRank</artifactId>
-  <version>6.0.0</version>
+  <version>7.0.0</version>
   <name>UltimateTitleRank</name>
   <description>Playtime-based LuckPerms auto rank + Title &amp;amp; ColorChat GUI</description>
 
