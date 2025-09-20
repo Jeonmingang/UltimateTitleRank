@@ -1,0 +1,24 @@
+name: UltimateTitleRank
+main: com.minkang.ultimate.titles.UltimateTitleRank
+version: 6.0.0
+api-version: 1.16
+author: minkang
+softdepend: [LuckPerms]
+commands:
+  승급:
+    description: 다음 등급까지 남은 시간과 안내를 보여줍니다.
+    usage: /승급
+  전설시간횟수:
+    description: 오늘 가능한 전설/메가보스 확인 명령을 실행하며 남은 횟수를 보여줍니다.
+    usage: /전설시간횟수
+    aliases: [legendleft, legend]
+  메가보스횟수:
+    description: 오늘 가능한 전설/메가보스 확인 명령을 실행하며 남은 횟수를 보여줍니다.
+    usage: /메가보스횟수
+    aliases: [megaleft, mega]
+  칭호:
+    description: 칭호 GUI 열기/생성/삭제/목록/아이템 설정
+    usage: /칭호 열기 | /칭호 생성 <이름> <번호> | /칭호 삭제 <플레이어> <번호> | /칭호 삭제 <번호> | /칭호 목록 | /칭호 아이템
+  색깔채팅:
+    description: 색깔채팅 GUI/지급/제거/목록
+    usage: /색깔채팅 열기 | /색깔채팅 지급 <색깔> <플레이어> | /색깔채팅 제거 <플레이어> <색깔> | /색깔채팅 목록
