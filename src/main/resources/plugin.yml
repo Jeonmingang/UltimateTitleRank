@@ -1,0 +1,75 @@
+name: UltimateTitleRank
+main: com.minkang.ultimate.titles.UltimateTitleRank
+version: 6.0.0
+api-version: 1.16
+author: minkang
+softdepend: [LuckPerms]
+commands:
+  승급:
+    description: 다음 등급까지 남은 시간과 안내를 보여줍니다.
+    usage: /승급
+    permission: utr.user.rank.info
+  전설시간횟수:
+    description: 오늘 가능한 전설/메가보스 확인 명령을 실행하며 남은 횟수를 보여줍니다.
+    usage: /전설시간횟수
+    permission: utr.user.legend
+    aliases: [legendleft, legend]
+  메가보스횟수:
+    description: 오늘 가능한 전설/메가보스 확인 명령을 실행하며 남은 횟수를 보여줍니다.
+    usage: /메가보스횟수
+    permission: utr.user.megaboss
+    aliases: [megaleft, mega]
+  칭호:
+    description: 칭호 GUI 열기/생성/삭제/목록/아이템 설정
+    usage: /칭호 열기 | /칭호 생성 <이름> <번호> | /칭호 삭제 <플레이어> <번호> | /칭호 삭제 <번호> | /칭호 목록 | /칭호 아이템
+  색깔채팅:
+    description: 색깔채팅 GUI/지급/제거/목록
+    usage: /색깔채팅 열기 | /색깔채팅 지급 <색깔> <플레이어> | /색깔채팅 제거 <플레이어> <색깔> | /색깔채팅 목록
+
+permissions:
+  utr.user.rank.info:
+    default: true
+    description: /승급 사용
+  utr.user.legend:
+    default: true
+    description: /전설시간횟수 사용
+  utr.user.megaboss:
+    default: true
+    description: /메가보스횟수 사용
+  utr.user.title.open:
+    default: true
+    description: /칭호 열기
+  utr.user.color.open:
+    default: true
+    description: /색깔채팅 열기
+  utr.user.color.list:
+    default: true
+    description: /색깔채팅 목록 보기
+  utr.admin.title.item:
+    default: op
+    description: /칭호 아이템
+  utr.admin.title.create:
+    default: op
+    description: /칭호 생성
+  utr.admin.title.delete:
+    default: op
+    description: /칭호 삭제
+  utr.admin.title.list:
+    default: op
+    description: /칭호 목록(관리용)
+  utr.admin.color.give:
+    default: op
+    description: /색깔채팅 지급
+  utr.admin.color.remove:
+    default: op
+    description: /색깔채팅 제거
+  utr.admin.*:
+    default: op
+    description: UltimateTitleRank 관리자 권한
+    children:
+      utr.admin.title.item: true
+      utr.admin.title.create: true
+      utr.admin.title.delete: true
+      utr.admin.title.list: true
+      utr.admin.color.give: true
+      utr.admin.color.remove: true
