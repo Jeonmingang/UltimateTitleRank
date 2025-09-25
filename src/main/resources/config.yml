@@ -1,0 +1,38 @@
+# UltimateAutoRank 기본 설정
+# - 체크 주기(초), 플레이타임 Placeholder, 랭크 규칙을 설정하세요.
+# - ZachFR Playtime 플러그인 + PlaceholderAPI가 필요합니다.
+#   사용되는 플레이스홀더(숫자): %playtime_seconds_all%  (총 누적 플레이타임 '초')
+#
+# LuckPerms 그룹 승급만 처리합니다. 이전 '칭호' 관련 기능은 전부 제거되었습니다.
+
+check-interval-seconds: 60
+
+# 플레이스홀더 문자열 (PlaceholderAPI)
+# 기본값: 총 누적 플레이타임(초)
+playtime-seconds-placeholder: "%playtime_seconds_all%"
+
+messages:
+  prefix: "&7[&a승급&7]&r "
+  status: "&e다음 등급: &b%next_group% &7| &e남은 플레이타임: &b%remaining%"
+  maxed: "&a이미 최고 등급까지 승급 완료 상태입니다."
+  promoted: "&a축하합니다! &e%new_group% &a등급으로 승급되었습니다."
+  missing_papi: "&cPlaceholderAPI 또는 Playtime 플러그인이 없어 승급 기능을 사용할 수 없습니다."
+  missing_lp: "&cLuckPerms가 설치되어 있지 않아 플러그인을 비활성화합니다."
+
+# 랭크 규칙 (요구 시간은 '초' 단위)
+# required-seconds: 해당 랭크 달성에 필요한 총 누적 플레이타임(초)
+# promote-to: LuckPerms 그룹 이름
+# remove-groups: 승급 시 제거할 기존 그룹 목록(선택)
+ranks:
+  - name: "Member"
+    promote-to: "member"
+    required-seconds: 3600
+    remove-groups: ["default"]
+  - name: "VIP"
+    promote-to: "vip"
+    required-seconds: 7200
+    remove-groups: ["member"]
+  - name: "MVP"
+    promote-to: "mvp"
+    required-seconds: 21600
+    remove-groups: ["vip"]
